@@ -10,8 +10,14 @@ def tracer(f, abscisse_min, abscisse_max, titre):
 	courbe.plot(x, f(x),'blue')
 	courbe.grid(True)
 	courbe.set_xlim(abscisse_min,abscisse_max)
-	courbe.set_ylim(0,) #démarrer l'axe des ordonnées a zero
 	plt.title(titre) 
 	plt.show()
 
-tracer(f,0,8,"graphe exercice 4 pour f(x) >= 0")
+#pour afficher les valeurs de f pour une intervalle donnée
+def afficher_fx(min,max):
+	for i in range(min,max+1):
+		print ("x=",i, "=> f(",i,")=",f(i))
+		
+#**********************************************
+tracer(f,0,8,"graphe fx exercice 4 ")
+afficher_fx(0,8)
