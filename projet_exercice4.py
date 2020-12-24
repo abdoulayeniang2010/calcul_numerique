@@ -11,7 +11,7 @@ def tracer(f, abscisse_min, abscisse_max, titre):
 	courbe.plot(x, f(x),'blue')
 	courbe.grid(True)
 	courbe.set_xlim(abscisse_min,abscisse_max)
-	plt.title(titre) 
+	plt.title(titre)
 	plt.show()
 
 #pour afficher les valeurs de f pour une intervalle donnée
@@ -31,10 +31,23 @@ def dichotomie(f, min, max):
 		nbre_iteration +=1
 	print('la racine =',m)
 	print("nombre d'iteration =",nbre_iteration)
-		
-#**********************************************
-#tracer(f,0,8,"graphe fx exercice 4 ")
-#afficher_fx(0,8)
-dichotomie(f,0,1)
-dichotomie(f,2,3)
-dichotomie(f,6,7)
+
+def g(x):
+	return 1/18*(6+9*x**2-x**3)
+
+def point_fixe(g, x0, epsilon, nbre_max_iteration):
+    iteration = 0
+    xp = {}
+    x = 0
+    while (iteration < nbre_max_iteration):
+	    try:
+	        x = g(x0)
+	    except OverflowError: 
+	        break
+	    xp[iteration] = x
+	    iteration += 1
+	    if abs(x - x0) <= epsilon:
+	        return xp,iteration
+	    x0 = x
+    return "Aucun point fixe"
+
