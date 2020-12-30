@@ -14,7 +14,7 @@ def tracer(f, abscisse_min, abscisse_max, titre):
 	plt.title(titre)
 	plt.show()
 
-#pour afficher les valeurs de f pour une intervalle donnée
+#pour afficher les valeurs de f pour un intervalle donnée
 def afficher_fx(min,max):
 	for i in range(min,max+1):
 		print ("x=",i, "=> f(",i,")=",f(i))
@@ -22,7 +22,7 @@ def afficher_fx(min,max):
 def dichotomie(f, min, max):
 	epsilon = pow(10,-3)
 	nbre_iteration = 0
-	while (max - min) > epsilon:
+	while abs(max - min) > epsilon:
 		m = (min+max)/2
 		if f(min)*f(m) <= 0:
 			max=m
