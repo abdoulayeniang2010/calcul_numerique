@@ -60,7 +60,7 @@ def tracer_aire(f,a,b,n):
 print("Methode du Point Milieu I(f) =",point_milieu(f,a,b,n))
 print("Methode de Simpson I(f) =",simpson(f,a,b,n))
 print("Methode de Trapeze I(f) =",trapeze(f,a,b,n))
-tracer_aire(f,a,b,n)
+
 
 print("\n****************************************\n")
 
@@ -81,3 +81,5 @@ print("n = 150 :",abs(i_exact - simpson(f,a,b,150)))
 print("n = 200 :",abs(i_exact - simpson(f,a,b,200)))
 print("n = 250 :",abs(i_exact - simpson(f,a,b,250)))
 
+tracer_aire(f,a,b,n)
+print("\n\t********* Fin du programme ************")
