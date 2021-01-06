@@ -45,9 +45,16 @@ def point_fixe(g, x0, epsilon, nbre_max_iteration):
 	    except OverflowError: 
 	        break
 	    xp[iteration] = x
-	    iteration += 1
 	    if abs(x - x0) <= epsilon:
 	        return xp,iteration
+	    iteration += 1
 	    x0 = x
     return "Aucun point fixe"
-
+    
+dichotomie(f,0,1)
+dichotomie(f,2,3)
+dichotomie(f,6,7)
+x,iteration = point_fixe(g,1/2,pow(10,-3),100)
+print("convergence point fixe :",x,"\nnombre ieration",iteration)
+tracer(f,0,8,"courbe de f")
+print("\n\t***********   END  ***************\n")
